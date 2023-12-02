@@ -11,6 +11,10 @@ fun processInputIntoListOfString(filePath: String): MutableList<String> {
 }
 
 fun main() {
+    // Day 1
     val calibration = Calibration(processInputIntoListOfString("src/main/resources/calibration_document.txt"))
-    println(calibration.addUpCalibratedValues())
+    println("Day 1 solution: " + calibration.addUpCalibratedValues())
+    // Day 2
+    val cubeConundrum = CubeConundrum(processInputIntoListOfString("src/main/resources/cube_game.txt"))
+    println("Day 2 solution: " + cubeConundrum.addUpPossibleIds())
 }
