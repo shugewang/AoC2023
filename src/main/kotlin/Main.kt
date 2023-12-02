@@ -16,5 +16,6 @@ fun main() {
     println("Day 1 solution: " + calibration.addUpCalibratedValues())
     // Day 2
     val cubeConundrum = CubeConundrum(processInputIntoListOfString("src/main/resources/cube_game.txt"))
-    println("Day 2 solution: " + cubeConundrum.addUpPossibleIds())
+    println("Day 2 Part 1 solution: " + cubeConundrum.addUpPossibleGameIds())
+    println("Day 2 Part 2 solution: " + cubeConundrum.addUpAllPowers())
 }

@@ -1,3 +1,4 @@
+// Day 2 Solution
 class CubeConundrum(private val input: MutableList<String>) {
     private var games = mutableListOf<Game>()
     private val requirement = mutableMapOf<String, Int>("red" to 12, "blue" to 14, "green" to 13)
@@ -12,7 +13,7 @@ class CubeConundrum(private val input: MutableList<String>) {
         }
     }
 
-    fun addUpPossibleIds(): Int {
+    fun addUpPossibleGameIds(): Int {
         var sum = 0
         for (game in games) {
             if (game.isPossible) {
@@ -22,14 +23,26 @@ class CubeConundrum(private val input: MutableList<String>) {
         return sum
     }
 
+    fun addUpAllPowers(): Int {
+        var sum = 0
+        for (game in games) {
+            sum += game.power
+        }
+        return sum
+    }
+
     class Game(private val game: String, private val requirement: MutableMap<String, Int>) {
         val id = game.split(": ")[0].split(" ")[1].toInt()
         private val sets = mutableListOf<GameSet>()
         var isPossible: Boolean = true
+        var power = 0
+        private var fewestCubes = mutableMapOf<String, Int>()
 
         init {
             getSets()
             checkIfPossible()
+            getFewestCubes()
+            getPower()
         }
 
         private fun getSets() {
@@ -48,8 +61,23 @@ class CubeConundrum(private val input: MutableList<String>) {
             }
         }
 
+        private fun getFewestCubes() {
+            fewestCubes = sets[0].statsMap
+            for (set in sets) {
+                for (colour in fewestCubes.entries) {
+                    if (set.statsMap[colour.key]!! > fewestCubes[colour.key]!!) {
+                        fewestCubes[colour.key] = set.statsMap[colour.key]!!
+                    }
+                }
+            }
+        }
+
+        private fun getPower() {
+            power = fewestCubes.values.reduce { acc, i -> acc*i}
+        }
+
         override fun toString(): String {
-            return "Game(id=$id, sets=$sets, isPossible=$isPossible)"
+            return "Game(id=$id, sets=$sets, isPossible=$isPossible, fewestCubes=$fewestCubes), power=$power)"
         }
     }
 
@@ -75,4 +103,3 @@ class CubeConundrum(private val input: MutableList<String>) {
         }
     }
 }
-
