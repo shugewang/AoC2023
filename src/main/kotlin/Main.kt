@@ -1,5 +1,6 @@
 import java.io.File
 import java.io.InputStream
+
 fun processInputIntoListOfString(filePath: String): MutableList<String> {
     val inputStream: InputStream = File(filePath).inputStream()
     val listOfString = mutableListOf<String>()
@@ -11,5 +12,5 @@ fun processInputIntoListOfString(filePath: String): MutableList<String> {
 
 fun main() {
     val calibration = Calibration(processInputIntoListOfString("src/main/resources/calibration_document.txt"))
-    println(calibration.addAllCalibrationValues())
+    println(calibration.addUpCalibratedValues())
 }
