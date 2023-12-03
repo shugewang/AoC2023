@@ -22,4 +22,5 @@ fun main() {
 
     // Day 3
     val engineSchematic = Engine(parseInputIntoListOfString("src/main/resources/engine_schematic.txt"))
+    println(engineSchematic.getGearRatios())
 }
