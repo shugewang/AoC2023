@@ -1,7 +1,7 @@
 import java.io.File
 import java.io.InputStream
 
-fun processInputIntoListOfString(filePath: String): MutableList<String> {
+fun parseInputIntoListOfString(filePath: String): MutableList<String> {
     val inputStream: InputStream = File(filePath).inputStream()
     val listOfString = mutableListOf<String>()
     for (line in inputStream.bufferedReader().lines()) {
@@ -12,10 +12,14 @@ fun processInputIntoListOfString(filePath: String): MutableList<String> {
 
 fun main() {
     // Day 1
-    val calibration = Calibration(processInputIntoListOfString("src/main/resources/calibration_document.txt"))
-    println("Day 1 solution: " + calibration.addUpCalibratedValues())
+//    val calibration = Calibration(processInputIntoListOfString("src/main/resources/calibration_document.txt"))
+//    println("Day 1 solution: " + calibration.addUpCalibratedValues())
+
     // Day 2
-    val cubeConundrum = CubeConundrum(processInputIntoListOfString("src/main/resources/cube_game.txt"))
-    println("Day 2 Part 1 solution: " + cubeConundrum.addUpPossibleGameIds())
-    println("Day 2 Part 2 solution: " + cubeConundrum.addUpAllPowers())
+//    val cubeConundrum = CubeConundrum(processInputIntoListOfString("src/main/resources/cube_game.txt"))
+//    println("Day 2 Part 1 solution: " + cubeConundrum.addUpPossibleGameIds())
+//    println("Day 2 Part 2 solution: " + cubeConundrum.addUpAllPowers())
+
+    // Day 3
+    val engineSchematic = Engine(parseInputIntoListOfString("src/main/resources/engine_schematic.txt"))
 }
