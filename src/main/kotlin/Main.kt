@@ -21,6 +21,10 @@ fun main() {
 //    println("Day 2 Part 2 solution: " + cubeConundrum.addUpAllPowers())
 
     // Day 3
-    val engineSchematic = Engine(parseInputIntoListOfString("src/main/resources/engine_schematic.txt"))
-    println(engineSchematic.getGearRatios())
+//    val engineSchematic = Engine(parseInputIntoListOfString("src/main/resources/engine_schematic.txt"))
+//    println(engineSchematic.getGearRatios())
+
+    // Day 4
+    val scratchcard = Scratchcards(parseInputIntoListOfString(("src/main/resources/scratchcard.txt")))
+    println(scratchcard.addUpPoints())
 }

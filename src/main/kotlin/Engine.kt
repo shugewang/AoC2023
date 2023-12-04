@@ -1,5 +1,4 @@
-import sun.security.ec.point.ProjectivePoint.Mutable
-
+// Day 3 Solution
 class Engine (var input: MutableList<String>) {
     private var partNumbers = mutableListOf<PartNumber>()
     private var gears = mutableListOf<Gear>()
