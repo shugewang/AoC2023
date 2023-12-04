@@ -22,9 +22,10 @@ fun main() {
 
     // Day 3
 //    val engineSchematic = Engine(parseInputIntoListOfString("src/main/resources/engine_schematic.txt"))
-//    println(engineSchematic.getGearRatios())
+//    println("Day 3 Part 2 solution: " + engineSchematic.getGearRatios())
 
     // Day 4
     val scratchcard = Scratchcards(parseInputIntoListOfString(("src/main/resources/scratchcard.txt")))
-    println(scratchcard.addUpPoints())
+    println("Day 4 Part 1 solution: " + scratchcard.addUpPoints())
+    println("Day 4 Part 2 solution: " + scratchcard.getTotalCards())
 }

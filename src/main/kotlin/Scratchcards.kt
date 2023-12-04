@@ -1,9 +1,11 @@
 // Day 4 Solution
 class Scratchcards (var input: MutableList<String>){
     var scratchcards = mutableListOf<Scratchcard>()
+    var scratchcardsCopies = mutableMapOf<Int, Int>()
 
     init {
         getCardInfo()
+        getInitialNumberOfCards()
     }
 
     private fun getCardInfo() {
@@ -21,13 +23,38 @@ class Scratchcards (var input: MutableList<String>){
 
     fun addUpPoints(): Int {
         var totalPoints = 0
-        scratchcards.map { totalPoints+=it.point }
+        scratchcards.map { totalPoints+=it.point; getCardCopies(it.id) }
         return totalPoints
+    }
+
+    private fun getInitialNumberOfCards() {
+        scratchcards.map { scratchcardsCopies.put(it.id, 1)}
+    }
+
+    private fun getCardCopies(card: Int) {
+        if (card in scratchcardsCopies.keys) {
+            for (number in 1..scratchcardsCopies[card]!!) {
+            if (card < scratchcards.size) {
+                for (i in 1..scratchcards.filter { it.id == card }[0].numberWins) {
+                    if (scratchcardsCopies.contains(card + i)) {
+                        scratchcardsCopies[card + i] = scratchcardsCopies.getValue(card + i) + 1
+                    } else {
+                        scratchcardsCopies.put(card + i, 1)
+                    }
+                }
+            }
+            }
+        }
+    }
+
+    fun getTotalCards(): Int {
+        return scratchcardsCopies.values.sum()
     }
 }
 
 class Scratchcard(var id: Int, var winningNumbers: List<Int>, var yourNumbers: List<Int>){
     private var wins = mutableListOf<Int>()
+    var numberWins = 0
     var point = 0
 
     init {
@@ -45,6 +72,7 @@ class Scratchcard(var id: Int, var winningNumbers: List<Int>, var yourNumbers: L
                 wins.add(number)
             }
         }
+        numberWins = wins.size
     }
 
     private fun getPoints() {
