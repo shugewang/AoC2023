@@ -47,6 +47,10 @@ fun main() {
 //    println("Day 4 Part 2 solution: " + scratchcard.getTotalCards())
 
     // Day 5
-    val foodProduction = Almanac(parseInputSplitByEmptyLine("src/main/resources/almanac.txt"))
-    println(foodProduction.findLowestLocation())
+//    val foodProduction = Almanac(parseInputSplitByEmptyLine("src/main/resources/almanac.txt"))
+//    println("Day 5 Part 1 solution: " + foodProduction.findLowestLocation())
+
+    // Day 6
+    val boatGame = BoatGame(parseInputIntoListOfString("src/main/resources/boat_records.txt"))
+    println(boatGame.multiplyNumberOfWaysToWin())
 }
