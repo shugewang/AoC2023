@@ -26,6 +26,10 @@ fun main() {
 //    println("Day 6 Part 2 solution: " + boatGame.multiplyNumberOfWaysToWin())
 
     // Day 7
-    val camelCards = CamelCards(parseInputIntoListOfString("src/main/resources/camel_cards.txt"))
-    println("Day 7 Part 2 solution: " + camelCards.getTotalWinnings())
+//    val camelCards = CamelCards(parseInputIntoListOfString("src/main/resources/camel_cards.txt"))
+//    println("Day 7 Part 2 solution: " + camelCards.getTotalWinnings())
+
+    // Day 8
+    val wasteland = Wasteland(parseInputSplitByEmptyLine("src/main/resources/wasteland_map.txt"))
+    println(wasteland.getSteps())
 }
