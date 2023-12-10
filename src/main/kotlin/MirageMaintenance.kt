@@ -12,8 +12,8 @@ class MirageMaintenance(val input: MutableList<String>) {
         for (sequence in report) {
             val sequenceDifferences = mutableListOf<MutableList<Int>>()
             getDifference(sequenceDifferences, sequence)
-            findNextValue(sequenceDifferences)
-            sum += sequenceDifferences[0].last()
+            extrapolate(sequenceDifferences)
+            sum += sequenceDifferences[0].first()
         }
         return sum
     }
@@ -31,9 +31,10 @@ class MirageMaintenance(val input: MutableList<String>) {
         }
     }
 
-    private fun findNextValue(sequenceDifferences: MutableList<MutableList<Int>>) {
+    private fun extrapolate(sequenceDifferences: MutableList<MutableList<Int>>) {
         for (i in sequenceDifferences.size-2 downTo 0) {
             sequenceDifferences[i].add(sequenceDifferences[i].last() + sequenceDifferences[i+1].last())
+            sequenceDifferences[i].add(0, sequenceDifferences[i].first() - sequenceDifferences[i+1].first())
         }
     }
 }
