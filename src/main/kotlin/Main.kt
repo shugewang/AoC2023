@@ -1,36 +1,7 @@
-import java.io.File
-import java.io.InputStream
-
-fun parseInputIntoListOfString(filePath: String): MutableList<String> {
-    val inputStream: InputStream = File(filePath).inputStream()
-    val listOfString = mutableListOf<String>()
-    for (line in inputStream.bufferedReader().lines()) {
-        listOfString.add(line)
-    }
-    return listOfString
-}
-
-fun parseInputSplitByEmptyLine(filePath: String): MutableList<MutableList<String>> {
-    val inputStream: InputStream = File(filePath).inputStream()
-    val listOfListOfString = mutableListOf<MutableList<String>>()
-    var listOfString = mutableListOf<String>()
-
-    for (line in inputStream.bufferedReader().lines()) {
-        if (line.isEmpty()) {
-            listOfListOfString.add(listOfString)
-            listOfString = mutableListOf()
-        } else {
-            listOfString.add(line)
-        }
-    }
-    listOfListOfString.add(listOfString)
-    return listOfListOfString
-}
-
 fun main() {
     // Day 1
 //    val calibration = Calibration(parseInputIntoListOfString("src/main/resources/calibration_document.txt"))
-//    println("Day 1 solution: " + calibration.addUpCalibratedValues())
+//    println("Day 1 Part 1 solution: " + calibration.addUpCalibratedValues())
 
     // Day 2
 //    val cubeConundrum = CubeConundrum(parseInputIntoListOfString("src/main/resources/cube_game.txt"))
@@ -51,6 +22,10 @@ fun main() {
 //    println("Day 5 Part 1 solution: " + foodProduction.findLowestLocation())
 
     // Day 6
-    val boatGame = BoatGame(parseInputIntoListOfString("src/main/resources/boat_records.txt"))
-    println(boatGame.multiplyNumberOfWaysToWin())
+//    val boatGame = BoatGame(parseInputIntoListOfString("src/main/resources/boat_records.txt"))
+//    println("Day 6 Part 2 solution: " + boatGame.multiplyNumberOfWaysToWin())
+
+    // Day 7
+    val camelCards = CamelCards(parseInputIntoListOfString("src/main/resources/camel_cards.txt"))
+    println("Day 7 Part 1 solution: " + camelCards.getTotalWinnings())
 }
