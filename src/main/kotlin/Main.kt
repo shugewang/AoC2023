@@ -27,5 +27,5 @@ fun main() {
 
     // Day 7
     val camelCards = CamelCards(parseInputIntoListOfString("src/main/resources/camel_cards.txt"))
-    println("Day 7 Part 1 solution: " + camelCards.getTotalWinnings())
+    println("Day 7 Part 2 solution: " + camelCards.getTotalWinnings())
 }
