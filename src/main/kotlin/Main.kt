@@ -31,5 +31,6 @@ fun main() {
 
     // Day 8
     val wasteland = Wasteland(parseInputSplitByEmptyLine("src/main/resources/wasteland_map.txt"))
-    println(wasteland.getSteps())
+    println("Day 8 Part 2 solution: " + wasteland.findLCMOfListOfNumbers(wasteland.ghostlySteps.values.map {it.toLong()}.toList()))
+
 }
