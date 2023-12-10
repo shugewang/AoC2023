@@ -30,7 +30,9 @@ fun main() {
 //    println("Day 7 Part 2 solution: " + camelCards.getTotalWinnings())
 
     // Day 8
-    val wasteland = Wasteland(parseInputSplitByEmptyLine("src/main/resources/wasteland_map.txt"))
-    println("Day 8 Part 2 solution: " + wasteland.findLCMOfListOfNumbers(wasteland.ghostlySteps.values.map {it.toLong()}.toList()))
+//    val wasteland = Wasteland(parseInputSplitByEmptyLine("src/main/resources/wasteland_map.txt"))
+//    println("Day 8 Part 2 solution: " + wasteland.findLCMOfListOfNumbers(wasteland.ghostlySteps.values.map {it.toLong()}.toList()))
 
+    // Day 9
+    val mirageMaintenance = MirageMaintenance(parseInputIntoListOfString("src/main/resources/mirage_maintenance.txt"))
 }
