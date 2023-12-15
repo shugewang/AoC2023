@@ -1,3 +1,5 @@
+import pipemaze.PipeMaze
+
 fun main() {
     // Day 1
 //    val calibration = Calibration(parseInputIntoListOfString("src/main/resources/calibration_document.txt"))
@@ -34,5 +36,8 @@ fun main() {
 //    println("Day 8 Part 2 solution: " + wasteland.findLCMOfListOfNumbers(wasteland.ghostlySteps.values.map {it.toLong()}.toList()))
 
     // Day 9
-    val mirageMaintenance = MirageMaintenance(parseInputIntoListOfString("src/main/resources/mirage_maintenance.txt"))
+//    val mirageMaintenance = MirageMaintenance(parseInputIntoListOfString("src/main/resources/mirage_maintenance.txt"))
+
+    // Day 10
+    val pipeMaze = PipeMaze(parseInputIntoListOfString("src/main/resources/pipe_sketch.txt"))
 }
